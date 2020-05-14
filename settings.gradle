@@ -1,0 +1,3 @@
+rootProject.name='DemoJar'
+include ':app'
+include ':adsdemolibrary'
