@@ -22,3 +22,6 @@ Example
 
  Just call Below simple one line code.
 AdsClass.showFBBannner(Context context, String placementID, View view,boolean testModeOn);
+
+Just call Below simple one line code for show Facebook Interstitial Ads.
+AdsClass.showFBInterstitialAds(context,placementId,testModeOn);
