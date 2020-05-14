@@ -30,47 +30,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public static void showFBInterstitialAd(Context context, String placementId){
-        final InterstitialAd interstitialAd = new InterstitialAd(context,placementId);
-        AdSettings.addTestDevice("29a2a34a-76b1-4646-a1bd-8165220fdee8");
-        interstitialAd.setAdListener(new AbstractAdListener() {
-            @Override
-            public void onError(Ad ad, AdError error) {
-                super.onError(ad, error);
-            }
 
-            @Override
-            public void onAdLoaded(Ad ad) {
-                super.onAdLoaded(ad);
-                interstitialAd.show();
-            }
-
-            @Override
-            public void onAdClicked(Ad ad) {
-                super.onAdClicked(ad);
-            }
-
-            @Override
-            public void onInterstitialDisplayed(Ad ad) {
-                super.onInterstitialDisplayed(ad);
-            }
-
-            @Override
-            public void onInterstitialDismissed(Ad ad) {
-                super.onInterstitialDismissed(ad);
-            }
-
-            @Override
-            public void onLoggingImpression(Ad ad) {
-                super.onLoggingImpression(ad);
-            }
-        });
-
-        interstitialAd.loadAd();
-    }
-    @Override
-    public void onBackPressed() {
-     //   super.onBackPressed();
-    showFBInterstitialAd(this,"YOUR_PLACEMENT_ID");
-    }
 }

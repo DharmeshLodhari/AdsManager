@@ -20,6 +20,45 @@ public class AdsClass {
         AdSettings.addTestDevice(testDeviceId);
         AdSettings.setTestMode(testModeOn);
         ((LinearLayout)view).addView(adView);
+        adView.loadAd();
     }
+    public static void showFBInterstitialAds(Context context,String placementId,boolean testModeOn){
+        final InterstitialAd interstitialAd = new InterstitialAd(context,placementId);
+        AdSettings.addTestDevice(testDeviceId);
+        AdSettings.setTestMode(testModeOn);
+        interstitialAd.setAdListener(new AbstractAdListener() {
+            @Override
+            public void onError(Ad ad, AdError error) {
+                super.onError(ad, error);
+            }
 
+            @Override
+            public void onAdLoaded(Ad ad) {
+                super.onAdLoaded(ad);
+                interstitialAd.show();
+            }
+
+            @Override
+            public void onAdClicked(Ad ad) {
+                super.onAdClicked(ad);
+            }
+
+            @Override
+            public void onInterstitialDisplayed(Ad ad) {
+                super.onInterstitialDisplayed(ad);
+            }
+
+            @Override
+            public void onInterstitialDismissed(Ad ad) {
+                super.onInterstitialDismissed(ad);
+            }
+
+            @Override
+            public void onLoggingImpression(Ad ad) {
+                super.onLoggingImpression(ad);
+            }
+        });
+
+        interstitialAd.loadAd();
+    }
 }
